@@ -69,7 +69,9 @@ return erreurs
 
 // Fabrique le plant à enregistrer à partir d'une saisie VALIDE : nombrePlants devient un nombre.
 export function creerPlant(saisie) {
-  throw new Error('TODO : coder creerPlant dans src/registre.js');
+  const valide = {...saisie};
+  valide.nombrePlants = Number(saisie.nombrePlants);
+  return valide;
 }
 
 // Ajoute la saisie à l'inventaire si elle est valide (verifierPlant, puis creerPlant).
