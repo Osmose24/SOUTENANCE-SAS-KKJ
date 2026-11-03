@@ -14,7 +14,17 @@ return plants.reduce((total, plant) => total + (plant.nombrePlants || 0), 0);
 // Exemple : { angiosperme: { especes: 8, plants: 222 }, gymnosperme: { especes: 2, plants: 18 } }
 // Liste vide : {} (un objet vide).
 export function syntheseParGroupe(plants) {
-  throw new Error('TODO : coder syntheseParGroupe dans src/synthese.js');
+  const synthese = {};
+  for (const plant of plants){
+    const groupe = plant.groupe;
+    const quantite = plant.nombrePlants || 0;
+    if (!synthese[groupe]){
+      synthese [groupe] = {especes: 0, plants: 0};
+    }
+    synthese[groupe].especes += 1;
+    synthese[groupe].plants += quantite;
+  }
+  return synthese;
 }
 
 // Renvoie un NOUVEAU tableau avec les plants dont le nombre est INFÉRIEUR OU ÉGAL au seuil.
