@@ -3,9 +3,7 @@
 > Projet individuel du SAS DFS, brief 2 (sujet : [SUJET.md](SUJET.md)). Remplacez chaque ✏️ par votre texte, puis supprimez cette ligne.
 
 ## Contexte
-
-✏️ *En cinq à huit phrases : qui utilise l'outil (son métier, son geste professionnel), son besoin, ce qu'il saisit, ce que le programme lui affiche, ce que l'outil ne fait pas.*
-
+L'outil est destiné au responsable d'une pépinière pédagogique ainsi qu'à son assistant afin de structurer et suivre un inventaire de plantes dont les données sont dispersées. Le programme répond au besoin de retrouver rapidement une espèce, connaître son groupe botanique ou consulter les quantités disponibles en temps réel. Lors de l'utilisation, l'utilisateur saisit au clavier des choix de menu, des informations sur les nouveaux plants comme le nom, le code ou le groupe, ainsi que l'origine du relevé. En retour, le programme affiche une interface textuelle claire comprenant le menu principal, l'état de chargement des données depuis un fichier JSON, les listes triées de l'inventaire et des synthèses globales des stocks. L'outil permet également de filtrer les recherches par groupe botanique ou par code pour faciliter le travail quotidien. En revanche, l'application ne gère pas la transmission automatique des identifications incertaines, qui doivent être signalées manuellement au coach.
 ## Prérequis et lancement
 
 - Node.js 20 ou plus récent, Git ; aucune bibliothèque à installer.
