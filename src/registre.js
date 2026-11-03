@@ -77,5 +77,11 @@ export function creerPlant(saisie) {
 // Ajoute la saisie à l'inventaire si elle est valide (verifierPlant, puis creerPlant).
 // Renvoie les erreurs : [] si le plant a été ajouté ; sinon les messages, et rien n'est ajouté.
 export function ajouterPlant(plants, saisie) {
-  throw new Error('TODO : coder ajouterPlant dans src/registre.js');
+  const erreurs = verifierPlant(saisie, plants);
+  if (erreurs.length > 0){
+    return erreurs;
+  }
+  const nouveauPlant = creerPlant(saisie);
+  plants.push(nouveauPlant);
+  return[];
 }
