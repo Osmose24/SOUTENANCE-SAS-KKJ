@@ -37,5 +37,14 @@ export function stocksFaibles(plants, seuil) {
 // le premier rencontré en cas d'égalité, ou null si l'inventaire est vide.
 // Exemple : especeLaPlusAbondante(donnees) → N04 (tomate, 50 plants)
 export function especeLaPlusAbondante(plants) {
-  throw new Error('TODO : coder especeLaPlusAbondante dans src/synthese.js');
+if (plants.length === 0){
+  return null;
+}
+let plusGrand = plants[0];
+for (let i = 1; i < plants.length; i++){
+  if (plants[i].nombrePlants > plusGrand.nombrePlants){
+    plusGrand = plants[i];
+  }
+}
+return plusGrand;
 }
