@@ -31,8 +31,41 @@ export function trouverParId(plants, id) {
 // Règles : id obligatoire et unique · nomCommun obligatoire · groupe présent dans GROUPES
 // · nombrePlants nombre ENTIER positif ou nul · dateReleve réelle au format AAAA-MM-JJ.
 export function verifierPlant(saisie, plants) {
-  throw new Error('TODO : coder verifierPlant dans src/registre.js');
+  const erreurs = [];
+  if (saisie.id.trim() === ""){
+    erreurs.push("saisie de l'id est obligatoire et unique");
+  }else{
+    for (const plant of plants){
+      if (plant.id === saisie.id){
+        erreurs.push("l'id existe déjà");
+        break;
+      }
+    }
+  }
+  if(saisie.nomCommun.trim() === ''){
+    erreurs.push("veuillez entrer obligatoirement une saisie valide");
+  }
+  if (!GROUPES.includes(saisie.groupe)){
+    erreurs.push("le groupe saisir n'existe pas");
+  }
+  const a = Number(saisie.nombrePlants);
+  if(!Number.isInteger(a) || a < 0 || saisie.nombrePlants.trim() ===""){
+erreurs.push("la quantité doit etre un nombre entier positif ou nul.");
+  }
+  function estDateValide(date) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    return false;
+  }
+  const [annee, mois, jour] = date.split("-").map(Number);
+  const d = new Date(annee, mois - 1, jour);
+  return (
+    d.getFullYear() === annee &&
+    d.getMonth() === mois - 1 &&
+    d.getDate() === jour
+  );
 }
+return erreurs
+  }
 
 // Fabrique le plant à enregistrer à partir d'une saisie VALIDE : nombrePlants devient un nombre.
 export function creerPlant(saisie) {
