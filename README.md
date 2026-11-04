@@ -26,8 +26,6 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 - [X] Rechercher par code ou par nom ; filtrer par groupe botanique
 - [X] Trier par nombre de plants
 - [X] Synthèse : stock total, espèces et plants par groupe, espèce la plus abondante, stocks faibles (≤ 10 plants)
-- [ ] Bonus : supprimer et modifier un plant (choix 6 et 7)
-- [ ] Bonus : tri décroissant, groupe le plus fourni
 
 ## Données
 

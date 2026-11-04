@@ -54,4 +54,22 @@ export function trierParNombrePlantsDecroissant(plants) {
 // le premier rencontré en cas d'égalité, ou null si l'inventaire est vide.
 // Exemple : groupeLePlusFourni(donnees) → { groupe: 'angiosperme', plants: 222 }
 export function groupeLePlusFourni(plants) {
+  if (plants.length === 0)
+     return null;
+    const totauxParGroupe = {};
+    for(const plant of plants){
+      if(!totauxParGroupe[plant.groupe]){
+        totauxParGroupe[plant.groupe] = 0;
+      }
+      totauxParGroupe[plant.groupe] += plant.nombrePlants;
+    }
+    let groupeMax = null;
+    let maxPlants = -1;
+    for(const groupe in totauxParGroupe){
+      if(totauxParGroupe[groupe] > maxPlants){
+        maxPlants = totauxParGroupe[groupe];
+        groupeMax = groupe;
+      }
+    }
+    return{groupe:groupeMax, plants: maxPlants};
 }
