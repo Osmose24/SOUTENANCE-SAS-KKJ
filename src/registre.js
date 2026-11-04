@@ -32,45 +32,37 @@ export function trouverParId(plants, id) {
 // · nombrePlants nombre ENTIER positif ou nul · dateReleve réelle au format AAAA-MM-JJ.
 export function verifierPlant(saisie, plants) {
   const erreurs = [];
-  if (saisie.id.trim() === ""){
-    erreurs.push("saisie de l'id est obligatoire et unique");
-  }else{
-    for (const plant of plants){
-      if (plant.id === saisie.id){
-        erreurs.push("l'id existe déjà");
-        break;
-      }
-    }
+  const id = String(saisie.id ?? '').trim();
+  const nomCommun = String(saisie.nomCommun ?? '').trim();
+  const groupe = String(saisie.groupe ?? '');
+  const texteNombre = String(saisie.nombrePlants ?? '');
+  const nombrePlants = versNombre(texteNombre);
+  const dateReleve = String(saisie.dateReleve ?? '');
+
+  if (id === '') {
+    erreurs.push('Le code du plant est obligatoire.');
+  } else if (plants.some((plant) => String(plant.id).toUpperCase() === id.toUpperCase())) {
+    erreurs.push('Le code du plant existe déjà.');
   }
-  if(saisie.nomCommun.trim() === ''){
-    erreurs.push("veuillez entrer obligatoirement une saisie valide");
+  if (nomCommun === '') {
+    erreurs.push('Le nom commun est obligatoire.');
   }
-  if (!GROUPES.includes(saisie.groupe)){
-    erreurs.push("le groupe saisir n'existe pas");
+  if (!GROUPES.includes(groupe)) {
+    erreurs.push(`Le groupe doit être ${GROUPES.join(' ou ')}.`);
   }
-  const a = Number(saisie.nombrePlants);
-  if(!Number.isInteger(a) || a < 0 || saisie.nombrePlants.trim() ===""){
-erreurs.push("la quantité doit etre un nombre entier positif ou nul.");
+  if (texteNombre.trim() === '' || !Number.isInteger(nombrePlants) || nombrePlants < 0) {
+    erreurs.push('Le nombre de plants doit être un nombre entier positif ou nul.');
   }
-  function estDateValide(date) {
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
-    return false;
+  if (!estDateValide(dateReleve)) {
+    erreurs.push('La date doit exister au format AAAA-MM-JJ.');
   }
-  const [annee, mois, jour] = date.split("-").map(Number);
-  const d = new Date(annee, mois - 1, jour);
-  return (
-    d.getFullYear() === annee &&
-    d.getMonth() === mois - 1 &&
-    d.getDate() === jour
-  );
+  return erreurs;
 }
-return erreurs
-  }
 
 // Fabrique le plant à enregistrer à partir d'une saisie VALIDE : nombrePlants devient un nombre.
 export function creerPlant(saisie) {
-  const valide = {...saisie};
-  valide.nombrePlants = Number(saisie.nombrePlants);
+  const valide = { ...saisie };
+  valide.nombrePlants = versNombre(saisie.nombrePlants);
   return valide;
 }
 

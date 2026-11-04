@@ -11,11 +11,11 @@ export const CHAMPS_MODIFIABLES = ['nomCommun', 'groupe', 'nombrePlants', 'dateR
 // Supprime de l'inventaire le plant qui a cet identifiant.
 // Renvoie le plant supprimé, ou undefined s'il n'existe pas (l'inventaire ne change pas).
 export function supprimerPlant(plants, id) {
-const position = plants.findIndex(plant => plant.id === id);
-if (position === -1){
-  return undefined;
-}
-return plants.splice(position, 1)[0];
+  const position = plants.findIndex((plant) => plant.id === id);
+  if (position === -1) {
+    return undefined;
+  }
+  return plants.splice(position, 1)[0];
 }
 
 // Modifie un champ d'un plant. valeur arrive sous forme de TEXTE, comme dans le menu.
@@ -24,18 +24,33 @@ return plants.splice(position, 1)[0];
 // CHAMPS_MODIFIABLES · valeur refusée par les règles de l'ajout. S'il y a une erreur, rien ne change.
 // nombrePlants est enregistré comme un nombre.
 export function modifierPlant(plants, id, champ, valeur) {
-  throw new Error('TODO Bonus : coder modifierPlant dans src/bonus.js');
+  const plant = trouverParId(plants, id);
+  if (!plant) {
+    return [`Plant ${id} introuvable.`];
+  }
+  if (champ === 'id') {
+    return ["L'identifiant n'est pas modifiable."];
+  }
+  if (!CHAMPS_MODIFIABLES.includes(champ)) {
+    return [`Le champ « ${champ} » ne peut pas être modifié.`];
+  }
+
+  const candidat = { ...plant, [champ]: valeur };
+  const erreurs = verifierPlant(candidat, plants.filter((element) => element !== plant));
+  if (erreurs.length > 0) {
+    return erreurs;
+  }
+  plant[champ] = champ === 'nombrePlants' ? versNombre(valeur) : valeur;
+  return [];
 }
 
 // Renvoie une COPIE triée par nombre de plants décroissant.
 // Deux plants de même nombre gardent leur ordre d'origine. Le tableau reçu ne change pas.
 export function trierParNombrePlantsDecroissant(plants) {
-  throw new Error('TODO Bonus : coder trierParNombrePlantsDecroissant dans src/bonus.js');
 }
 
 // Renvoie { groupe, plants } pour le groupe botanique qui a le plus de plants au total,
 // le premier rencontré en cas d'égalité, ou null si l'inventaire est vide.
 // Exemple : groupeLePlusFourni(donnees) → { groupe: 'angiosperme', plants: 222 }
 export function groupeLePlusFourni(plants) {
-  throw new Error('TODO Bonus : coder groupeLePlusFourni dans src/bonus.js');
 }
