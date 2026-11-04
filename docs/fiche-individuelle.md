@@ -1,6 +1,6 @@
 # Fiche individuelle — à personnaliser avant la livraison
 
-**Prénom, nom, compte GitHub** : non communiqués dans le dépôt ou la demande. À renseigner par l'auteur ; aucune identité n'est supposée ici.
+**Prénom, nom, compte GitHub** : KOUAKOU JANVIER, KOUAKOU, Osmose24
 
 1. **Fonction technique à expliquer** : `verifierPlant` contrôle les cinq champs de saisie, accumule un message pour chaque règle enfreinte et ne modifie pas l'inventaire. L'auteur doit relire son implémentation et préparer sa propre explication avant la soutenance.
 2. **Difficulté technique identifiée dans le dépôt** : la modification d'un plant appelait une fonction inexistante et ne convertissait pas correctement le champ de quantité. La correction réutilise la validation du registre en excluant le plant concerné des doublons, puis convertit la quantité validée.
