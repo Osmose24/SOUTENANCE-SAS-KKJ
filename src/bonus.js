@@ -47,6 +47,7 @@ export function modifierPlant(plants, id, champ, valeur) {
 // Renvoie une COPIE triée par nombre de plants décroissant.
 // Deux plants de même nombre gardent leur ordre d'origine. Le tableau reçu ne change pas.
 export function trierParNombrePlantsDecroissant(plants) {
+  return [...plants].sort((a,b) => b.nombrePlants - a.nombrePlants);
 }
 
 // Renvoie { groupe, plants } pour le groupe botanique qui a le plus de plants au total,
