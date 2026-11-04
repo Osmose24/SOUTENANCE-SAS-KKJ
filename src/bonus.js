@@ -11,7 +11,11 @@ export const CHAMPS_MODIFIABLES = ['nomCommun', 'groupe', 'nombrePlants', 'dateR
 // Supprime de l'inventaire le plant qui a cet identifiant.
 // Renvoie le plant supprimé, ou undefined s'il n'existe pas (l'inventaire ne change pas).
 export function supprimerPlant(plants, id) {
-  throw new Error('TODO Bonus : coder supprimerPlant dans src/bonus.js');
+const position = plants.findIndex(plant => plant.id === id);
+if (position === -1){
+  return undefined;
+}
+return plants.splice(position, 1)[0];
 }
 
 // Modifie un champ d'un plant. valeur arrive sous forme de TEXTE, comme dans le menu.
