@@ -1,6 +1,6 @@
 # Fiche agronomique — repères à valider
 
-Cette fiche donne des repères généraux pour interpréter les groupes inscrits dans le jeu de données. Le document botanique remis par le coach et l'observation de spécimens ne sont pas présents dans ce dépôt : les critères ci-dessous ne prétendent donc pas reproduire une observation de terrain ni une validation du coach.
+Cette fiche donne des repères généraux pour interpréter les groupes inscrits dans le jeu de données. Le document botanique n'a pas été remis par le coach et l'observation de spécimens ne sont pas présents dans ce dépôt : les critères ci-dessous ne prétendent donc pas reproduire une observation de terrain ni une validation du coach.
 
 **Organe végétatif — manguier** : les feuilles sont des organes végétatifs. Elles participent notamment à la photosynthèse et aux échanges gazeux. Aucune feuille n'a été observée dans le cadre de ce dépôt ; il s'agit d'un exemple à confronter à un spécimen ou à une photographie.
 
@@ -13,4 +13,4 @@ Cette fiche donne des repères généraux pour interpréter les groupes inscrits
 
 **Le seuil de 10 plants dit-il qu'il faut produire davantage d'une espèce ?** Non. C'est uniquement un repère de suivi du brief pour signaler des quantités faibles. Une décision de production nécessite d'autres informations et une validation agronomique.
 
-**Sources et origine des observations** : consignes de `SUJET.md` et données fictives de `donnees/plants.json` ; aucun relevé d'organes ni fiche botanique du coach n'est fourni. Les critères généraux sont à vérifier avec la référence botanique du cours. **Relecture par le coach le** : non renseignée ; à faire avant une livraison présentée comme validée.
+**Sources et origine des observations** : consignes de `SUJET.md` et données fictives de `donnees/plants.json` ; aucun relevé d'organes ni fiche botanique du coach n'est fourni. Les critères généraux sont à vérifier avec la référence botanique du cours.
