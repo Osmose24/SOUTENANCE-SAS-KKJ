@@ -47,10 +47,35 @@ export function modifierPlant(plants, id, champ, valeur) {
 // Renvoie une COPIE triée par nombre de plants décroissant.
 // Deux plants de même nombre gardent leur ordre d'origine. Le tableau reçu ne change pas.
 export function trierParNombrePlantsDecroissant(plants) {
+<<<<<<< HEAD
+=======
+  return [...plants].sort((a,b) => b.nombrePlants - a.nombrePlants);
+>>>>>>> 412a942a5cb740871099e353927c68a5a3e3046f
 }
 
 // Renvoie { groupe, plants } pour le groupe botanique qui a le plus de plants au total,
 // le premier rencontré en cas d'égalité, ou null si l'inventaire est vide.
 // Exemple : groupeLePlusFourni(donnees) → { groupe: 'angiosperme', plants: 222 }
 export function groupeLePlusFourni(plants) {
+<<<<<<< HEAD
+=======
+  if (plants.length === 0)
+     return null;
+    const totauxParGroupe = {};
+    for(const plant of plants){
+      if(!totauxParGroupe[plant.groupe]){
+        totauxParGroupe[plant.groupe] = 0;
+      }
+      totauxParGroupe[plant.groupe] += plant.nombrePlants;
+    }
+    let groupeMax = null;
+    let maxPlants = -1;
+    for(const groupe in totauxParGroupe){
+      if(totauxParGroupe[groupe] > maxPlants){
+        maxPlants = totauxParGroupe[groupe];
+        groupeMax = groupe;
+      }
+    }
+    return{groupe:groupeMax, plants: maxPlants};
+>>>>>>> 412a942a5cb740871099e353927c68a5a3e3046f
 }
