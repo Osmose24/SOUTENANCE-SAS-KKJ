@@ -7,7 +7,7 @@ export const SEUIL_STOCK_FAIBLE = 10;
 
 // Renvoie le nombre total de plants. Liste vide : 0.
 export function totalPlants(plants) {
-return plants.reduce((total, plant) => total + (plant.nombrePlants || 0), 0);
+  return plants.reduce((total, plant) => total + (plant.nombrePlants ?? 0), 0);
 }
 
 // Renvoie un objet : pour chaque groupe, le nombre d'espèces (de lignes) et le total de plants.
@@ -17,9 +17,9 @@ export function syntheseParGroupe(plants) {
   const synthese = {};
   for (const plant of plants){
     const groupe = plant.groupe;
-    const quantite = plant.nombrePlants || 0;
-    if (!synthese[groupe]){
-      synthese [groupe] = {especes: 0, plants: 0};
+    const quantite = plant.nombrePlants ?? 0;
+    if (!Object.hasOwn(synthese, groupe)) {
+      synthese[groupe] = { especes: 0, plants: 0 };
     }
     synthese[groupe].especes += 1;
     synthese[groupe].plants += quantite;
@@ -37,14 +37,14 @@ export function stocksFaibles(plants, seuil) {
 // le premier rencontré en cas d'égalité, ou null si l'inventaire est vide.
 // Exemple : especeLaPlusAbondante(donnees) → N04 (tomate, 50 plants)
 export function especeLaPlusAbondante(plants) {
-if (plants.length === 0){
-  return null;
-}
-let plusGrand = plants[0];
-for (let i = 1; i < plants.length; i++){
-  if (plants[i].nombrePlants > plusGrand.nombrePlants){
-    plusGrand = plants[i];
+  if (plants.length === 0) {
+    return null;
   }
-}
-return plusGrand;
+  let plusGrand = plants[0];
+  for (let i = 1; i < plants.length; i += 1) {
+    if (plants[i].nombrePlants > plusGrand.nombrePlants) {
+      plusGrand = plants[i];
+    }
+  }
+  return plusGrand;
 }
