@@ -15,8 +15,6 @@ npm test
 Sous PowerShell, utilisez `npm.cmd` si la politique d'exécution bloque `npm`.
 
 ## Fonctionnalités
-
-<<<<<<< HEAD
 - [x] Charger et enregistrer les données JSON dans `donnees/plants.json`
 - [x] Ajouter, lister, rechercher par code, nom ou groupe
 - [x] Trier par quantité croissante ou décroissante sans changer l'ordre enregistré
@@ -32,7 +30,6 @@ Sous PowerShell, utilisez `npm.cmd` si la politique d'exécution bloque `npm`.
 - [X] Rechercher par code ou par nom ; filtrer par groupe botanique
 - [X] Trier par nombre de plants
 - [X] Synthèse : stock total, espèces et plants par groupe, espèce la plus abondante, stocks faibles (≤ 10 plants)
->>>>>>> 412a942a5cb740871099e353927c68a5a3e3046f
 
 ## Données
 
