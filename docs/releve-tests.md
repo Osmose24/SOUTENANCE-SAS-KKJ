@@ -22,5 +22,5 @@ Commande exécutée : `npm.cmd test` (Node.js 24.22.0). Résultat final : **45 t
 | Synthèse de départ | 240 plants, 8/2 espèces par groupe, seuil inclusif | Résultats conformes aux calculs ci-dessus | Tests automatisés |
 | Menu, ajout, modification, suppression | Dialogue complet et écritures JSON persistantes | Parcours exécutés sur copie temporaire ; données relues après opérations | Tests d'intégration |
 | Fichier JSON illisible | Message explicite et démarrage vide | Vérifié avec JSON mal formé | Test d'intégration |
-| Clone et lancement sur un autre poste | `node app.js` et `npm test` fonctionnels hors du poste de travail | Non exécuté dans cet environnement | À vérifier avant livraison |
+| Clone et lancement sur un autre poste | `node app.js` et `npm test` fonctionnels hors du poste de travail | oui exécuté dans cet environnement | vérifié |
 
