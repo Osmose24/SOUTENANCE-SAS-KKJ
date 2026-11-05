@@ -269,5 +269,4 @@ async function main() {
     fermerSaisie();
   }
 }
-
 main();

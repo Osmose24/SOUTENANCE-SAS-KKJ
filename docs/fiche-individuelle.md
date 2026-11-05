@@ -8,4 +8,5 @@
 - l'usage de IA pour expliquer les fichiers md
 - <https://developer.mozilla.org/fr/docs/Web/JavaScript> pour une vision claires sur les commandes propre à notre exercice.
 N'Diamoi julle Christ pour les explications détaillées
+Kanga Christ pour apport de commande
 

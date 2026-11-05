@@ -22,9 +22,6 @@ Sous PowerShell, utilisez `npm.cmd` si la politique d'exécution bloque `npm`.
 - [x] Supprimer et modifier un plant, avec validation des saisies
 - [x] Enregistrer chaque ajout, modification ou suppression réussie
 - [x] Démarrer avec un inventaire vide et afficher l'erreur si le fichier de données ne peut pas être lu
-=======
-✏️ *Cochez seulement ce qui marche : `- [x]`.*
-
 - [X] Données lues et enregistrées dans `donnees/plants.json`
 - [X] Lister l'inventaire, message si l'inventaire est vide
 - [X] Rechercher par code ou par nom ; filtrer par groupe botanique
